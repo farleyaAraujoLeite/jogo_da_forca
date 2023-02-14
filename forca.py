@@ -1,16 +1,16 @@
 from random import choice
 import emoji
 from playsound import playsound
-
-
+            
 def forca():
-    music1 = '/home/farley/Documentos/jogo_da_forca/lees_point.mp3'
-    music2 = '/home/farley/Documentos/jogo_da_forca/loose.mp3'
-    music3 = '/home/farley/Documentos/jogo_da_forca/winner.mp3'
-
+        
+    music_less_point = '/home/farley/Documentos/jogo_da_forca/songs/lees_point.mp3'
+    music_looser = '/home/farley/Documentos/jogo_da_forca/songs/loose.mp3'
+    music_winner = '/home/farley/Documentos/jogo_da_forca/songs/winner.mp3'
+    #lista
     frutas = ['melao', 'banana', 'abacaxi', 'uva', 'laranja', 'melancia', 'abacate', 'goiaba']
     print('===================================================================================')
-    print(f'Tente adivinhar qual foi a fruta escolhida pelo sistema na lista a seguir:{frutas}')
+    print(f'Tente adivinhar qual foi a fruta escolhida pelo sistema na lista a seguir em 3 tentativas:{frutas}')
     print('===================================================================================')
     escolhida = choice(frutas)
     erros = 0
@@ -18,16 +18,15 @@ def forca():
     while palpite != escolhida and erros < 3:
         erros = erros + 1
         print(f'Total de erros: {erros}')
-        playsound(music1)
+        playsound(music_less_point)
         if erros == 3:
-            print('Você não pode mais errar !')
+            print('Agora não pode mais errar !')
         palpite = input('Tente novamente:')
         if palpite == escolhida:
-            print('Parabéns, você acertou!', emoji.emojize(':party_popper:'))
-            playsound(music3)
+            print('Parabéns, você acertou e venceu!', emoji.emojize(':party_popper:'))
+            playsound(music_winner)
         elif erros == 3:
             print(f'Você errou {erros} vezes e foi para a forca.',emoji.emojize(':anxious_face_with_sweat:'))
-            playsound(music2)
+            playsound(music_looser)
             break
-
-forca()    
+forca() 
