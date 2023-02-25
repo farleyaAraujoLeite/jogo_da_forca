@@ -5,7 +5,7 @@ from playsound import playsound
             
 def forca():
   
-    music_less_point = '/home/farley/Documentos/jogo_da_forca/songs/lees_point.mp3'
+    less_point = '/home/farley/Documentos/jogo_da_forca/songs/less_point.mp3'
     music_looser = '/home/farley/Documentos/jogo_da_forca/songs/loose.mp3'
     music_winner = '/home/farley/Documentos/jogo_da_forca/songs/winner.mp3'
     #lista
@@ -19,7 +19,7 @@ def forca():
     while palpite != escolhida and erros < 3:
         erros = erros + 1
         print(f'Total de erros: {erros}')
-        playsound(music_less_point)
+        playsound(less_point)
         if erros == 3:
             print('Agora não pode mais errar !')
         palpite = input('Tente novamente:')
